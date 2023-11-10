@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=Laila:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --bg-color: #fff;
+    --main-color: #4b3621;
+    --hover-color: #a18262;
+
+    --primary-font: 'Laila', serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+    font-family: var(--primary-font);
+    color: black;
+}
+
+body {
+    height: 100vh;
+    overflow: hidden;
+}
+
+section {
+    height: auto;
+}
+
+.cabecalho {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2% 10%;
+}
+
+.cabecalho::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/bgNav.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* opacity: .3; */
+    z-index: -1;
+    background-color: black;
+}
+
+.cabecalho input {
+    display: none;
+}
+
+.cabecalho label i {
+    color: white;
+    display: none;
+}
+
+.cabecalho .logo {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+}
+
+.cabecalho__links {
+    position: relative;
+}  
+
+.cabecalho__links a {
+    color: white;
+    font-size: 1.6rem;
+    margin-left: 3.4rem;
+}
+
+.cabecalho__links .ative {
+    color: var(--hover-color);
+}
+
+.cabecalho__links a:hover {
+    color: var(--hover-color);
+}
+
+.home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5% 10%;
+    width: 100%;
+    z-index: 1;
+}
+
+.home::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('../img/bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    opacity: .3;
+    z-index: -10;
+}
+
+.home__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 60%;
+}
+
+.home__conteudo__titulo {
+    font-size: 4.6rem;
+    display: inline-flex;
+}
+
+.home__conteudo__subtitulo {
+    font-size: 2.8rem;
+    font-weight: 500;
+    margin-top: -25px;
+    color: var(--main-color);
+}
+
+.home__conteudo__texto {
+    font-size: 2rem;
+    font-weight: 300;
+    margin: 40px 0;
+}
+
+.home__conteudo__links {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    width: 100%;
+}
+
+.home__conteudo__links .learnMore {
+    position: relative;
+    font-size: 30px;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 20px;
+    z-index: 1;
+    overflow: hidden;
+    letter-spacing: 1px;
+    color: var(--hover-color);
+    background: var(--main-color);
+}
+
+.home__conteudo__links .learnMore::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: var(--hover-color);
+    z-index: -1;
+    transition: .3s all;
+}
+
+.home__conteudo__links .learnMore:hover::before {
+    width: 100%;
+}
+
+.home__conteudo__links .learnMore:hover {
+    color: var(--main-color);
+}
+
+.home__conteudo__links .home-redes i {
+    font-size: 70px;
+    transition: .6s all;
+}
+
+.home__conteudo__links .home-redes i:hover {
+    transform: scale(1.2);
+    transition: all .6s ease-in-out;
+    color: var(--main-color);
+}
+
+img {
+    border: 2px solid black;
+    width: 30%;
+}
+
+@media (max-width: 1440px) {
+    .home__container {
+        width: 55%;
+    }
+
+    .home__conteudo__titulo{
+        font-size: 4rem;
+    }
+
+    .home__conteudo__subtitulo {
+        font-size: 2.2rem;
+        margin-top: -15px;
+    }
+
+    .home__conteudo__texto {
+        font-size: 1.5rem;
+    }
+
+    img {
+        width: 40%;
+    }
+}
+
+@media (max-width: 1200px) {
+    .home__conteudo__titulo {
+        font-size: 3.4rem;
+    }
+
+    .home__conteudo__subtitulo {
+        font-size: 1.8rem;
+    }
+
+    .home__conteudo__texto {
+        font-size: 1.4rem;
+    }
+
+    .home__conteudo__links .learnMore {
+        padding: 10px 20px;
+    }
+
+    .home__conteudo__links .home-redes i {
+        font-size: 50px;
+    }
+
+    img {
+        width: 45%;
+        margin-left: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    body {
+        overflow: auto;
+    }
+
+    .cabecalho .logo {
+        font-size: 1.4rem;
+    }
+
+    .cabecalho__links a {
+        font-size: 1.2rem;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 5% 0;
+    }
+
+    .home::before {
+        background-position: 60%;
+        transform: scaleX(-1) scaleY(-1);
+    }
+
+    .home__conteudo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .home__conteudo__titulo {
+        margin-top: 20px;
+    }
+
+    img {
+        margin: 5% 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .cabecalho label i {
+        font-size: 40px;
+        display: block;
+    }
+
+    .cabecalho__links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 10%;
+        width: 140px;
+        padding: 0 10px;
+        z-index: 1;
+        border-radius: 10px;
+        background: var(--main-color);
+    }
+
+
+    .menu:checked + .menu-icon + .cabecalho__links {
+        display: block;
+    }
+
+    .menu-icon {
+        cursor: pointer;
+    }
+
+    .bx-menu {
+        font-size: 4rem;
+        display: inline-block;
+    }
+
+    .cabecalho__links a {
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        padding: .5em;
+    }
+
+    .home__container {
+        width: 80vw;
+    }
+
+    .home__conteudo__titulo {
+        font-size: 2.8rem;
+    }
+
+    .home__conteudo__subtitulo {
+        font-size: 1.4rem;
+    }
+
+    .home__conteudo__texto {
+        font-size: 1.2rem;
+        text-align: center;
+        font-weight: 400;
+    }
+
+    .home__conteudo__links {
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .home__conteudo__links .learnMore {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 425px) {
+    .home__conteudo__titulo {
+        font-size: 2rem;
+    }
+
+    .home__conteudo__subtitulo {
+        margin-top: 0;
+        text-align: center;
+    }
+
+    .home__conteudo__texto {
+        margin: 20px 0;
+    }
+
+    .home__conteudo__links {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+}
